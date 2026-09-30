@@ -3,42 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>reTechs Studio Ultimate v6.8</title>
+  <title>reClash Studio Suite v7.9 - Responsive Perfection</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lexend:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@400;700&family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,400&family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
-    :root {
-      /* Giao diện mặc định: Premium Light Glass */
-      --bg: #f8fafc;
-      --card: rgba(255, 255, 255, 0.75);
+    /* Responsive Global Fixes */
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+    }
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      position: relative;
+    }
+    
+        :root {
+      /* Giao diện mặc định: Premium Light Glass (Antigravity Light Edition) */
+      --bg: #f1f3f9;
+      --card: rgba(255, 255, 255, 0.82);
       --card-inner: #ffffff;
-      --border: rgba(15, 23, 42, 0.06);
-      --border-focus: rgba(15, 23, 42, 0.2);
+      --border: rgba(56, 189, 248, 0.12);
+      --border-focus: #38bdf8;
       --text: #0f172a;
-      --text-dim: #64748b;
+      --text-dim: #475569;
       --btn-bg: #0f172a;
       --btn-text: #ffffff;
-      --accent: #f43f5e;
-      --accent-alpha: rgba(244, 63, 94, 0.12);
-      --accent-grad: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%) !important;
-      --blur-val: 20px;
+      --accent: #38bdf8;
+      --accent-alpha: rgba(56, 189, 248, 0.1);
+      --accent-grad: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%) !important;
+      --blur-val: 24px;
+      --shadow: 0 20px 60px rgba(56, 189, 248, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+        [data-theme="dark"] {
+      /* Giao diện tối huyền bí: Deep Space Dark Glass (Antigravity Dark Edition) */
+      --bg: #04050a;
+      --card: rgba(10, 11, 22, 0.72);
+      --card-inner: rgba(16, 18, 36, 0.6);
+      --border: rgba(56, 189, 248, 0.18);
+      --border-focus: rgba(99, 102, 241, 0.6);
+      --text: #f8fafc;
+      --text-dim: #94a3b8;
+      --btn-bg: #38bdf8;
+      --btn-text: #04050a;
+      --accent: #38bdf8;
+      --accent-alpha: rgba(56, 189, 248, 0.16);
+      --accent-grad: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #a855f7 100%) !important;
+      --shadow: 0 25px 65px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
 
     body {
       font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
       background-color: var(--bg);
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%),
-        radial-gradient(rgba(15, 23, 42, 0.03) 1.5px, transparent 1.5px);
+        radial-gradient(circle at 50% 0%, var(--accent-alpha) 0%, transparent 60%),
+        radial-gradient(var(--border) 1.5px, transparent 1.5px);
       background-size: 100% 100%, 35px 35px;
       background-attachment: fixed;
       color: var(--text);
       margin: 0;
-      padding: 24px 16px;
+      padding: 40px 16px;
       min-height: 100vh;
       display: flex;
       justify-content: center;
+      align-items: flex-start;
       box-sizing: border-box;
-      transition: all 0.5s ease;
+      transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
     }
 
     .container {
@@ -49,7 +79,7 @@
       -webkit-backdrop-filter: blur(var(--blur-val));
       padding: 28px;
       border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      box-shadow: var(--shadow);
       border: 1px solid var(--border);
       transition: max-width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       display: flex;
@@ -109,7 +139,7 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 20px;
-      background: rgba(255, 255, 255, 0.8);
+      background: var(--card-inner);
       padding: 10px 16px;
       border-radius: 14px;
       border: 1px solid var(--border);
@@ -166,7 +196,7 @@
 
     input, textarea, select {
       width: 100%;
-      background: rgba(255, 255, 255, 0.9);
+      background: var(--card-inner);
       border: 1px solid var(--border);
       color: var(--text);
       padding: 12px 14px;
@@ -181,7 +211,7 @@
       outline: none;
       border-color: var(--accent);
       box-shadow: 0 0 0 3px var(--accent-alpha);
-      background: #ffffff;
+      background: var(--card-inner);
     }
 
     .auto-box {
@@ -353,7 +383,7 @@
       width: 100%;
       max-width: 420px;
       aspect-ratio: 3/4;
-      background: #edf2f7;
+      background: var(--bg);
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
@@ -430,7 +460,7 @@
     /* CSS for reNews RSS Feed */
     .rss-section {
       margin-bottom: 22px;
-      background: rgba(255, 255, 255, 0.6);
+      background: var(--card-inner);
       padding: 16px;
       border-radius: 16px;
       border: 1px solid var(--border);
@@ -453,7 +483,7 @@
     }
     .rss-card {
       flex: 0 0 150px;
-      background: #ffffff;
+      background: var(--card-inner);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 8px;
@@ -474,7 +504,7 @@
       height: 84px;
       object-fit: cover;
       border-radius: 8px;
-      background: #edf2f7;
+      background: var(--bg);
       border: 1px solid rgba(15, 23, 42, 0.04);
     }
     .rss-title {
@@ -548,7 +578,7 @@
     }
 
     .section-box {
-      background: rgba(255, 255, 255, 0.6);
+      background: var(--card-inner);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 20px;
@@ -587,7 +617,7 @@
     }
 
     .preset-btn {
-      background: rgba(255, 255, 255, 0.8);
+      background: var(--card-inner);
       border: 1px solid var(--border);
       color: var(--text);
       padding: 10px;
@@ -602,11 +632,11 @@
 
     .preset-btn:hover {
       border-color: var(--accent);
-      background: rgba(56, 189, 248, 0.05);
+      background: var(--accent-alpha);
     }
 
     .comparison-item {
-      background: #ffffff;
+      background: var(--card-inner);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 14px;
@@ -681,12 +711,221 @@
       background: rgba(15, 23, 42, 0.06);
       border-color: rgba(15, 23, 42, 0.1);
     }
-  </style>
+
+    /* FLOATING THEME TOGGLER STYLE */
+    .theme-toggle {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 1000;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(var(--blur-val));
+      -webkit-backdrop-filter: blur(var(--blur-val));
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .theme-toggle:hover {
+      transform: scale(1.08) rotate(15deg);
+      background: var(--card-inner);
+      border-color: var(--accent);
+      box-shadow: 0 8px 25px var(--accent-alpha);
+    }
+    .theme-toggle:active {
+      transform: scale(0.95);
+    }
+
+    /* Optimize scrollbar in dark mode */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-focus);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+
+    /* Custom optimized styles for mobile inputs v7.4 */
+    #titleText {
+      min-height: 100px;
+      font-size: 16px !important;
+      padding: 14px;
+      line-height: 1.5;
+    }
+    #descText {
+      min-height: 220px;
+      font-size: 16px !important;
+      padding: 14px;
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 16px 8px !important;
+      }
+      
+      .container {
+        padding: 16px !important;
+        border-radius: 16px !important;
+        gap: 16px !important;
+      }
+      
+      .brand-selector-container {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        padding: 12px !important;
+      }
+      
+      .brand-label {
+        text-align: center !important;
+        justify-content: center !important;
+        font-size: 12.5px !important;
+      }
+      
+      .brand-segmented {
+        width: 100% !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 6px !important;
+      }
+      
+      .brand-btn {
+        padding: 8px 10px !important;
+        font-size: 12.5px !important;
+        flex: 1 1 auto !important;
+      }
+      
+      .grid-3, .grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+      
+      input, textarea, select {
+        font-size: 16px !important;
+        padding: 10px 12px !important;
+      }
+      
+      #preview-canvas-news, .canvas-container-info {
+        max-width: 100% !important;
+      }
+    }
+  
+    /* Antigravity floating boxes transitions and hover effects */
+    .section-box, .bookmark-box, .auto-box, .highlight-box, .compare-box, .carousel-box, .sensitive-box, .format-box, .rss-section {
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.4s ease !important;
+    }
+    .section-box:hover, .bookmark-box:hover, .auto-box:hover, .highlight-box:hover, .compare-box:hover, .carousel-box:hover, .sensitive-box:hover, .format-box:hover, .rss-section:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.15) !important;
+      border-color: rgba(56, 189, 248, 0.35) !important;
+    }
+    /* Smooth container floating lift */
+    .container {
+      transition: max-width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease, border-color 0.6s ease !important;
+    }
+    .container:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: var(--shadow), 0 30px 80px rgba(56, 189, 248, 0.12) !important;
+      border-color: rgba(56, 189, 248, 0.32) !important;
+    }
+    
+    /* Cosmos glowing background blur spots */
+    .cosmos-dust {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: -1;
+      transition: background-color 0.6s ease, transform 10s ease-in-out infinite alternate;
+    }
+    .cosmos-dust-1 {
+      top: 10%;
+      left: 10%;
+      width: 320px;
+      height: 320px;
+      background: var(--accent);
+      animation: floatSlowly1 20s infinite alternate;
+    }
+    .cosmos-dust-2 {
+      bottom: 15%;
+      right: 10%;
+      width: 420px;
+      height: 420px;
+      background: #6366f1;
+      animation: floatSlowly2 25s infinite alternate;
+    }
+    
+    @keyframes floatSlowly1 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(50px, 40px) scale(1.15); }
+    }
+    @keyframes floatSlowly2 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-60px, -30px) scale(1.2); }
+    }
+
+    /* Accordion UI Styles for reTechs */
+    #form-retechs .section-box {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-bottom: 16px;
+    }
+    #form-retechs .section-title {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 0;
+      margin-bottom: 0 !important; /* Will spacing inside when expanded */
+    }
+    #form-retechs .section-box.collapsed {
+      padding-bottom: 12px;
+    }
+    #form-retechs .section-box .section-content {
+      margin-top: 15px;
+      transition: opacity 0.3s ease;
+    }
+    #form-retechs .section-box.collapsed .section-content {
+      display: none !important;
+    }
+    #form-retechs .section-box.collapsed .accordion-caret i {
+      transform: rotate(-90deg);
+    }
+    #form-retechs .accordion-caret i {
+      transition: transform 0.3s ease;
+      font-size: 13px;
+      color: var(--accent);
+    }
+
+</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+<!-- Antigravity Space Glow Elements -->
+<div class="cosmos-dust cosmos-dust-1"></div>
+<div class="cosmos-dust cosmos-dust-2"></div>
+
+
+<!-- FLOATING THEME TOGGLE BUTTON -->
+<button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" title="Đổi Chế Độ Nền">
+  <i class="fa-solid fa-moon"></i>
+</button>
 
 <div class="container">
-  <h2 id="appHeaderTitle">reTechs Studio Ultimate (v6.8 - Banner)</h2>
+  <h2 id="appHeaderTitle">reClash Studio Suite (v7.9 - Responsive Perfection)</h2>
 
   <!-- GLOBAL BRAND SELECTOR -->
   <div class="brand-selector-container">
@@ -694,6 +933,7 @@
     <div class="brand-segmented">
       <button class="brand-btn active" id="brand-reNews" onclick="switchBrand('reNews')">🔥 reNews</button>
       <button class="brand-btn" id="brand-reTechs" onclick="switchBrand('reTechs')">⚡ reTechs</button>
+      <button class="brand-btn" id="brand-reGame" onclick="switchBrand('reGame')">🎮 reClash Game</button>
     </div>
   </div>
 
@@ -718,7 +958,7 @@
       </div>
 
       <!-- Hộp thêm nguồn RSS tùy chỉnh -->
-      <div id="rssManageBox" style="display: none; background: rgba(255, 255, 255, 0.02); border-radius: 12px; border: 1px dashed rgba(255, 255, 255, 0.1); padding: 12px; margin-bottom: 10px;">
+      <div id="rssManageBox" style="display: none; background: var(--bg); border-radius: 12px; border: 1px dashed var(--border); padding: 12px; margin-bottom: 10px;">
         <label style="margin-top: 0; color: #0284c7; font-weight: 700;">➕ Thêm nguồn RSS tùy chỉnh:</label>
         <input type="text" id="customRssName" placeholder="Tên nguồn (vd: Vietgame, GameK)..." style="margin-bottom: 6px;">
         <input type="text" id="customRssUrl" placeholder="Link RSS (vd: https://gamek.vn/rss/home.rss)..." style="margin-bottom: 8px;">
@@ -848,6 +1088,7 @@
           <label>Bố cục ảnh (Layout Template):</label>
           <select id="layoutSelect" onchange="triggerRender()">
             <option value="default" selected>Bố cục Chuẩn (Liquid Glass / Slate)</option>
+            <option value="holiday">Bố cục Chúc Mừng Ngày Lễ (Cờ đỏ sao vàng) 🇻🇳</option>
             <option value="emergency">Tin Khẩn Cấp (Viền đỏ sậm, chữ to cảnh báo) 🚨</option>
             <option value="quote">Trích Dẫn (Ngoặc kép lớn, tối giản nghệ thuật) 💬</option>
           </select>
@@ -865,7 +1106,7 @@
       <label>Danh sách từ khóa bôi sáng thêm (Ngăn cách bằng dấu phẩy):</label>
       <input type="text" id="customKeywords" placeholder="VD: GTA VI, reNews, Vietgame, 4 ngày" value="GTA VI, reTechs, reClash" oninput="triggerRender()">
       <p style="font-size: 11px; color: #b45309; margin: 6px 0 0 0; line-height: 1.4; font-weight: 600;">
-        * Mẹo: Bạn cũng có thể dùng dấu sao <code style="background: rgba(15,23,42,0.06); padding: 1px 4px; border-radius: 3px; font-weight:bold; color:#0f172a;">*từ_khóa*</code> hoặc ngoặc vuông <code style="background: rgba(15,23,42,0.06); padding: 1px 4px; border-radius: 3px; font-weight:bold; color:#0f172a;">[từ_khóa]</code> trong Đoạn trích để tự bôi sáng từ mong muốn!
+        * Mẹo: Bạn cũng có thể dùng dấu sao <code style="background: var(--border); padding: 1px 4px; border-radius: 3px; font-weight:bold; color:var(--text);">*từ_khóa*</code> hoặc ngoặc vuông <code style="background: var(--border); padding: 1px 4px; border-radius: 3px; font-weight:bold; color:var(--text);">[từ_khóa]</code> trong Đoạn trích để tự bôi sáng từ mong muốn!
       </p>
     </div>
     
@@ -912,11 +1153,12 @@
     </div>
     
     <div class="flex-row">
-      <button class="btn flex-col" id="btnDownload" style="display:none; background: #e2e8f0; color:#0f172a; margin-top: 20px;" onclick="downloadImage()">📥 Tải Ảnh Hiện Tại</button>
+      <button class="btn flex-col" id="btnDownload" style="display:none; background: var(--border-focus); color: var(--text); margin-top: 20px;" onclick="downloadImage()">📥 Tải Ảnh Hiện Tại</button>
       <button class="btn flex-col" id="btnDownloadAll" style="display:none; background: linear-gradient(135deg, #0284c7, #06b6d4); color:#ffffff; margin-top: 20px;" onclick="downloadAllCarouselPages()">🎠 Tải Trọn Bộ Carousel</button>
     </div>
 
   </div>
+
 
   <!-- ==================== TAB 2: RETECHS INFOGRAPHIC CREATOR ==================== -->
   <div id="form-retechs" class="workspace" style="display: none;">
@@ -928,12 +1170,35 @@
       <div class="section-box preset-selector">
         <div class="section-title">⚡ Chọn Mẫu So Sánh Nhanh (Infographic Presets)</div>
         <div class="preset-grid">
-          <button class="preset-btn" onclick="loadPreset(0)">📨 Email OTP & Quota 0đ</button>
-          <button class="preset-btn" onclick="loadPreset(1)">💻 VPS & Cloud Hosting Free</button>
-          <button class="preset-btn" onclick="loadPreset(2)">🗄️ Database Cloud Miễn Phí</button>
-          <button class="preset-btn" onclick="loadPreset(3)">🤖 AI API Miễn Phí / Giá Dev</button>
+          <button class="preset-btn" onclick="loadPreset(0)">📱 Đại Chiến Flagship (iPhone vs Samsung)</button>
+          <button class="preset-btn" onclick="loadPreset(1)">💻 Cấu Hình Chiến GTA 6 Giá Tốt</button>
+          <button class="preset-btn" onclick="loadPreset(2)">🎮 Đánh Giá Siêu Phẩm Black Myth: Wukong</button>
         </div>
       </div>
+
+      <!-- PHẦN 1B: DẤU TRANG & DÁN TỰ ĐỘNG RETECHS -->
+      <div class="bookmark-box">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 13.5px; font-weight: 700; color: var(--accent); display: inline-block; margin-bottom: 4px;">📱 Dấu trang cào cấu hình (reTechs Specs):</span>
+        </div>
+        <button class="btn-copy-bm" id="btnCopyBmInfo" onclick="copyBookmarkletCodeInfo()">📋 Sao Chép Mã Bookmarklet reTechs</button>
+      </div>
+
+      <div class="auto-box">
+        <label style="margin-top:0; color: #334155; font-weight: 700;">⚡ Dán dữ liệu tự động từ Bookmarklet reTechs:</label>
+        <input type="text" id="autoPasteInputInfo" placeholder="Dán mã JSON cấu hình cào tin vào đây..." oninput="handleAutoFillInfo(this.value)" onchange="handleAutoFillInfo(this.value)">
+      </div>
+
+      <!-- PHẦN 1C: KÍCH THƯỚC INFOGRAPHIC -->
+      <div class="format-box">
+        <label style="color: #0284c7; font-weight: 800; margin-top:0; display: flex; align-items: center; gap: 6px;">📐 Kích thước Infographic (Tỷ lệ khung hình):</label>
+        <select id="formatSelectInfo" onchange="changeFormatInfo()">
+          <option value="3_4" selected>Bố cục dọc chuẩn (3:4 - 1200x1600)</option>
+          <option value="9_16">TikTok / Shorts / Reels (Đứng 9:16 - 1200x2133)</option>
+          <option value="1_1">Instagram / Facebook (Vuông 1:1 - 1200x1200)</option>
+        </select>
+      </div>
+
 
       <!-- PHẦN 2: TIÊU ĐỀ & THƯƠNG HIỆU -->
       <div class="section-box">
@@ -1013,7 +1278,7 @@
         <button class="btn btn-secondary" onclick="refreshInfographic()">🔄 Cập nhật / Làm mới Canvas</button>
       </div>
       <p style="font-size: 11px; color: var(--text-dim); text-align: center; margin-top: 10px; max-width: 420px;">
-        * Canvas được cấu hình độ phân giải siêu nét (1200 x 1600 px) chuyên dụng để sếp đăng bài không lo bể vỡ hình.
+        * Canvas được cấu hình độ phân giải siêu nét (1200 x 1600 px) chuyên dụng để bạn đăng bài không lo bể vỡ hình.
       </p>
     </div>
 
@@ -1021,6 +1286,37 @@
 </div>
 
 <script>
+
+  // ==================== DOUBLE THEME SYNC ENGINE ====================
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('reClash_theme', newTheme);
+    
+    updateThemeUI(newTheme);
+    triggerRender();
+  }
+
+  function updateThemeUI(theme) {
+    const themeBtn = document.getElementById('themeBtn');
+    if (themeBtn) {
+      if (theme === 'dark') {
+        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      } else {
+        themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      }
+    }
+  }
+
+  // Khôi phục theme đồng bộ từ localStorage hoặc mặc định
+  const savedTheme = localStorage.getItem('reClash_theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  // Khởi tạo trạng thái nút bấm sau khi DOM nạp xong
+  window.addEventListener('DOMContentLoaded', () => {
+    updateThemeUI(savedTheme);
+  });
+
   // Global Brand & Engine States
   let activeEngine = 'reNews'; // 'reNews' (Banner) or 'reTechs' (Infographic)
   let currentBrand = 'reNews'; // 'reNews' or 'reTechs'
@@ -1029,7 +1325,7 @@
 
   function switchBrand(brand) {
     currentBrand = brand;
-    activeEngine = (brand === 'reNews') ? 'reNews' : 'reTechs';
+    activeEngine = (brand === 'reNews' || brand === 'reGame') ? 'reNews' : 'reTechs';
     
     // Reset trạng thái vẽ để hiển thị màn hình chờ (placeholder) cao cấp cho từng kênh tương ứng
     isBannerGenerated = false;
@@ -1047,7 +1343,7 @@
     const formRenews = document.getElementById('form-renews');
     const formRetechs = document.getElementById('form-retechs');
     
-    if (brand === 'reNews') {
+    if (brand === 'reNews' || brand === 'reGame') {
       if (container) container.style.maxWidth = '620px';
       if (formRenews) formRenews.style.display = 'block';
       if (formRetechs) formRetechs.style.display = 'none';
@@ -1069,17 +1365,27 @@
       root.style.setProperty('--accent', '#f43f5e'); // Red-pink
       root.style.setProperty('--accent-alpha', 'rgba(244, 63, 94, 0.12)');
       root.style.setProperty('--accent-grad', 'linear-gradient(135deg, #f43f5e 0%, #ec4899 100%)');
-      if (headerTitle) headerTitle.innerText = "reTechs Studio Ultimate (v6.8 - Banner)";
+      if (headerTitle) headerTitle.innerText = "reClash Studio Suite (v8.0 - Dynamic Feed Overhaul)";
       document.title = "reTechs Studio Ultimate - Banner Creator";
       if (watermarkInput) watermarkInput.value = "@reNews_Official";
       if (badgeInput) badgeInput.value = "TIN NÓNG";
       if (hashtagInput) hashtagInput.value = "#RENEWS";
       if (logoTextInput) logoTextInput.value = "reNews";
+    } else if (brand === 'reGame') {
+      root.style.setProperty('--accent', '#10b981'); // Emerald Green
+      root.style.setProperty('--accent-alpha', 'rgba(16, 185, 129, 0.12)');
+      root.style.setProperty('--accent-grad', 'linear-gradient(135deg, #10b981 0%, #059669 100%)');
+      if (headerTitle) headerTitle.innerText = "reClash Studio Suite (v8.0 - Dynamic Feed Overhaul)";
+      document.title = "reClash Game - Banner Creator";
+      if (watermarkInput) watermarkInput.value = "@reClash_Gaming";
+      if (badgeInput) badgeInput.value = "GAME NÓNG";
+      if (hashtagInput) hashtagInput.value = "#REGAME";
+      if (logoTextInput) logoTextInput.value = "reClash Game";
     } else {
       root.style.setProperty('--accent', '#38bdf8'); // Cyber Blue
       root.style.setProperty('--accent-alpha', 'rgba(56, 189, 248, 0.15)');
       root.style.setProperty('--accent-grad', 'linear-gradient(135deg, #38bdf8 0%, #0284c7 100%)');
-      if (headerTitle) headerTitle.innerText = "reTechs Studio Ultimate (v6.8 - Infographic)";
+      if (headerTitle) headerTitle.innerText = "reClash Studio Suite (v7.7 - Infographic)";
       document.title = "reTechs Studio Ultimate - Infographic Creator";
       if (watermarkInput) watermarkInput.value = "@reTechs_Official";
       if (badgeInput) badgeInput.value = "CÔNG NGHỆ";
@@ -1088,6 +1394,10 @@
     }
     
     triggerRender();
+    
+    // Auto reload and refresh RSS feeds matching the newly selected brand channel
+    renderRssDropdown();
+    onRssSourceChange();
   }
 
   // EMBEDDED DUAL-ENGINE PREMIUM SVG LOGOS (Base64)
@@ -1151,7 +1461,7 @@
     ctx.fill();
 
     // Centered Logo
-    const activeLogo = (currentBrand === 'reNews') ? preloadedReNewsLogo : preloadedReTechsLogo;
+    const activeLogo = (currentBrand === 'reNews') ? preloadedReNewsLogo : ((currentBrand === 'reTechs') ? preloadedReTechsLogo : null);
     if (activeLogo && activeLogo.complete && activeLogo.width > 0) {
       ctx.save();
       ctx.shadowColor = currentBrand === 'reNews' ? 'rgba(244, 63, 94, 0.45)' : 'rgba(56, 189, 248, 0.45)';
@@ -1205,12 +1515,30 @@
   // Trạng thái vẽ Canvas chủ động theo lệnh người dùng
 
   // --- TÍNH NĂNG MỚI: TRẠM TIN TỰ ĐỘNG RSS FEED (ONE-CLICK RSS LIBRARY) ---
-  const DEFAULT_RSS_FEEDS = [
-    { name: "VnExpress - Mới Nhất", url: "https://vnexpress.net/rss/tin-moi-nhat.rss", source: "VnExpress" },
-    { name: "Tuổi Trẻ - Mới Nhất", url: "https://tuoitre.vn/rss/tin-moi-nhat.rss", source: "Tuổi Trẻ" },
-    { name: "Thanh Niên - Mới Nhất", url: "https://thanhnien.vn/rss/home.rss", source: "Thanh Niên" },
-    { name: "Vietgame.asia", url: "https://vietgame.asia/feed/", source: "Vietgame.asia" }
-  ];
+    const RSS_FEEDS_BY_BRAND = {
+    reNews: [
+      { name: "VnExpress - Mới Nhất", url: "https://vnexpress.net/rss/tin-moi-nhat.rss", source: "VnExpress" },
+      { name: "VnExpress - Thế Giới", url: "https://vnexpress.net/rss/the-gioi.rss", source: "VnExpress" },
+      { name: "Tuổi Trẻ - Tin Mới Nhất", url: "https://tuoitre.vn/rss/tin-moi-nhat.rss", source: "Tuổi Trẻ" },
+      { name: "Tuổi Trẻ - Thời Sự", url: "https://tuoitre.vn/rss/thoi-su.rss", source: "Tuổi Trẻ" },
+      { name: "Thanh Niên - Thời Sự", url: "https://thanhnien.vn/rss/thoi-su.rss", source: "Thanh Niên" }
+    ],
+    reTechs: [
+      { name: "Tinh Tế - Trang Chủ", url: "https://tinhte.vn/rss", source: "Tinh Tế" },
+      { name: "Sforum - Tin Công Nghệ", url: "https://sforum.vn/feed", source: "Sforum" },
+      { name: "GenK - Tin Mới", url: "https://genk.vn/rss.rss", source: "GenK" },
+      { name: "VnExpress - Số Hóa", url: "https://vnexpress.net/rss/so-hoa.rss", source: "VnExpress" },
+      { name: "Techrum - Diễn Đàn", url: "https://www.techrum.vn/feed/", source: "Techrum" }
+    ],
+    reGame: [
+      { name: "reClash Gaming News (feed.xml)", url: "https://www.reclash.io.vn/feed.xml", source: "reClash Game" },
+      { name: "reClash Gaming News (feed/)", url: "https://www.reclash.io.vn/feed/", source: "reClash Game" },
+      { name: "Vietgame.asia - Tin Game", url: "https://vietgame.asia/feed/", source: "Vietgame.asia" },
+      { name: "GameK - Trang Chủ", url: "https://gamek.vn/rss.rss", source: "GameK" },
+      { name: "Game4V - Tin Mới", url: "https://game4v.com/feed", source: "Game4V" },
+      { name: "Mọt Game - Tổng hợp", url: "https://motgame.vn/feed", source: "Mọt Game" }
+    ]
+  };
   let customRssFeeds = [];
 
   function loadRssLibrary() {
@@ -1230,8 +1558,11 @@
     if (!select) return;
     select.innerHTML = "";
     
+    // Lấy các nguồn mặc định theo brand hiện tại
+    const feeds = RSS_FEEDS_BY_BRAND[currentBrand] || RSS_FEEDS_BY_BRAND['reNews'];
+    
     // Thêm các nguồn mặc định
-    DEFAULT_RSS_FEEDS.forEach((feed, idx) => {
+    feeds.forEach((feed, idx) => {
       const opt = document.createElement('option');
       opt.value = `default_${idx}`;
       opt.innerText = feed.name;
@@ -1328,18 +1659,19 @@
 
   function getSelectedRss() {
     const select = document.getElementById('rssSourceSelect');
-    if (!select) return DEFAULT_RSS_FEEDS[0];
+    const feeds = RSS_FEEDS_BY_BRAND[currentBrand] || RSS_FEEDS_BY_BRAND['reNews'];
+    if (!select) return feeds[0];
     const val = select.value;
     if (val) {
       if (val.startsWith('default_')) {
         const idx = parseInt(val.split('_')[1]);
-        return DEFAULT_RSS_FEEDS[idx];
+        return feeds[idx] || feeds[0];
       } else if (val.startsWith('custom_')) {
         const idx = parseInt(val.split('_')[1]);
-        return customRssFeeds[idx];
+        return customRssFeeds[idx] || feeds[0];
       }
     }
-    return DEFAULT_RSS_FEEDS[0];
+    return feeds[0];
   }
 
   function onRssSourceChange() {
@@ -1555,10 +1887,21 @@
   // Đăng ký gọi hàm khi trang tải xong (Hệ thống khởi chạy chống treo cực kì ổn định)
   function initApp() {
     loadRssLibrary();
-    fetchRSSFeed();
     preloadSuiteLogos();
-    switchBrand('reNews'); // Khởi tạo thương hiệu mặc định ban đầu là reNews
+    
+    // Đọc tham số 'brand' từ URL (ví dụ: ?brand=reGame hoặc ?brand=reTechs)
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlBrand = urlParams.get('brand');
+    
+    if (urlBrand && ['reNews', 'reTechs', 'reGame'].includes(urlBrand)) {
+      switchBrand(urlBrand);
+    } else {
+      switchBrand('reNews'); // Mặc định ban đầu
+    }
+    
+    fetchRSSFeed();
     loadPreset(0); // Khởi tạo preset cho Infographic
+    initAccordion(); // Khởi chạy hệ thống Accordion thu gọn form reTechs
   }
 
   if (document.readyState === 'loading') {
@@ -1584,7 +1927,7 @@
   if (dateInput) dateInput.value = getTodayString();
 
   // Mã Bookmarklet chuẩn để cào nội dung mọi trang báo và copy an toàn (v3.2 fixed)
-  const bookmarkletCode = `javascript:(function(){try{var t=document.querySelector('h1.detail-title,h1.title-detail,h1.title-news,h1.article-title,h1.detail__title,meta[property=\\"og:title\\"]')?.innerText||document.querySelector('meta[property=\\"og:title\\"]')?.content||document.title||\\"\\";t=t.replace(/\\s*-\\s*Tuổi Trẻ.*$/i,'').replace(/\\s*-\\s*VnExpress.*$/i,'').replace(/\\s*-\\s*Tin Game.*$/i,'').replace(/\\s*-\\s*[^-]+$/,'').trim();var descParts=[];var sapoEl=document.querySelector('.detail-sapo,.detail__sapo,p.description,.sapo,.lead,.summary,.entry-summary');if(sapoEl&&sapoEl.innerText.trim()){descParts.push(sapoEl.innerText.trim());}var contentContainer=document.querySelector('#main-detail-body,.detail-content,.detail__content,.fck_detail,.entry-content,article');if(contentContainer){var bodyPs=contentContainer.querySelectorAll('p:not(.Image):not(.caption):not([style*=\\"text-align:right\\"]):not([style*=\\"text-align: right\\"])');for(var i=0;i<bodyPs.length&&descParts.length<3;i++){var pText=bodyPs[i].innerText.trim();if(pText&&pText.length>35&&!descParts.includes(pText)&&!pText.startsWith('Ảnh:')&&!pText.startsWith('Theo ')&&!pText.startsWith('TTO')&&!pText.startsWith('>>')&&!pText.startsWith('*')){descParts.push(pText);}}}var desc=descParts.join(' ');if(!desc){desc=document.querySelector('meta[property=\\"og:description\\"]')?.content||document.querySelector('meta[name=\\"description\\"]')?.content||\\"\\";}var img=\\"\\";if(contentContainer){var firstBodyImg=contentContainer.querySelector('[type=\\"Photo\\"] img,.VCSortableInPage img,figure img,img[itemprop=\\"contentUrl\\"],img[data-src]');if(firstBodyImg){img=firstBodyImg.getAttribute('data-src')||firstBodyImg.getAttribute('data-original')||firstBodyImg.getAttribute('src')||\\"\\";}}if(!img||img.startsWith('data:image')){img=document.querySelector('meta[property=\\"og:image\\"]')?.content||\\"\\";}var badge=\\"\\";var cateEl=document.querySelector('.detail-cate a,.detail__cate a,.breadcrumb li a:last-child,.parent-cate,meta[property=\\"article:section\\"],[class*=\\"the-loai\\"]');if(cateEl){badge=cateEl.innerText||cateEl.content||\\"\\";}if(!badge){var metaCat=document.querySelector('meta[name=\\"tt_category_id\\"],meta[name=\\"keywords\\"]')?.content?.split(',')[0];if(metaCat&&isNaN(metaCat))badge=metaCat;}badge=(badge||\\"TIN MỚI\\").trim();if(badge.length>25)badge=\\"TIN MỚI\\";var author=\\"\\";var authorEl=document.querySelector('.author-info,.author,.detail-author,p[style*=\\"text-align:right\\"] strong,p[style*=\\"text-align: right\\"] strong,p.author strong,[rel=\\"author\\"],.author-name,.byline,meta[name=\\"author\\"]');if(authorEl){author=authorEl.innerText||authorEl.content||\\"\\";}author=author.replace(/^Theo\\s+/i,'').replace(/^Ảnh:.*$/i,'').trim();if(!author||author.length>30){author=\\"Tổng hợp\\";}var src=window.location.hostname.replace('www.','');var data=JSON.stringify({title:t.trim(),desc:desc.trim(),image:img.trim(),badge:badge.trim(),author:author.trim(),source:src});var tempInput=document.createElement("textarea");tempInput.value=data;tempInput.style.position="fixed";tempInput.style.left="-9999px";tempInput.style.top="0";document.body.appendChild(tempInput);tempInput.focus();tempInput.select();var copied=false;try{copied=document.execCommand("copy");}catch(e){}document.body.removeChild(tempInput);if(copied){alert("✅ Đã cào và copy thành công!");}else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(data).then(function(){alert("✅ Đã cào và copy thành công!");}).catch(function(){prompt("Copy dữ liệu JSON bên dưới:",data);});}else{prompt("Copy dữ liệu JSON bên dưới:",data);}}catch(err){alert("❌ Lỗi cào dữ liệu: "+err.message);}})();`;
+  const bookmarkletCode = `javascript:(function(){try{var t=document.querySelector('h1.detail-title,h1.title-detail,h1.title-news,h1.article-title,h1.detail__title,meta[property="og:title"]')?.innerText||document.querySelector('meta[property="og:title"]')?.content||document.title||"";t=t.replace(/\\s*-\\s*Tuổi Trẻ.*\$/i,'').replace(/\\s*-\\s*VnExpress.*\$/i,'').replace(/\\s*-\\s*Tin Game.*\$/i,'').replace(/\\s*-\\s*[^-]+\$/,'').trim();var descParts=[];var sapoEl=document.querySelector('.detail-sapo,.detail__sapo,p.description,.sapo,.lead,.summary,.entry-summary');if(sapoEl&&sapoEl.innerText.trim()){descParts.push(sapoEl.innerText.trim());}var contentContainer=document.querySelector('#main-detail-body,.detail-content,.detail__content,.fck_detail,.entry-content,article');if(contentContainer){var bodyPs=contentContainer.querySelectorAll('p:not(.Image):not(.caption):not([style*="text-align:right"]):not([style*="text-align: right"])');for(var i=0;i<bodyPs.length&&descParts.length<3;i++){var pText=bodyPs[i].innerText.trim();if(pText&&pText.length>35&&!descParts.includes(pText)&&!pText.startsWith('Ảnh:')&&!pText.startsWith('Theo ')&&!pText.startsWith('TTO')&&!pText.startsWith('>>')&&!pText.startsWith('*')){descParts.push(pText);}}}var desc=descParts.join(' ');if(!desc){desc=document.querySelector('meta[property="og:description"]')?.content||document.querySelector('meta[name="description"]')?.content||"";}var img="";if(contentContainer){var firstBodyImg=contentContainer.querySelector('[type="Photo"] img,.VCSortableInPage img,figure img,img[itemprop="contentUrl"],img[data-src]');if(firstBodyImg){img=firstBodyImg.getAttribute('data-src')||firstBodyImg.getAttribute('data-original')||firstBodyImg.getAttribute('src')||"";}}if(!img||img.startsWith('data:image')){img=document.querySelector('meta[property="og:image"]')?.content||"";}var badge="";var cateEl=document.querySelector('.detail-cate a,.detail__cate a,.breadcrumb li a:last-child,.parent-cate,meta[property="article:section"],[class*="the-loai"]');if(cateEl){badge=cateEl.innerText||cateEl.content||"";}if(!badge){var metaCat=document.querySelector('meta[name="tt_category_id"],meta[name="keywords"]')?.content?.split(',')[0];if(metaCat&&isNaN(metaCat))badge=metaCat;}badge=(badge||"TIN MỚI").trim();if(badge.length>25)badge="TIN MỚI";var author="";var authorEl=document.querySelector('.author-info,.author,.detail-author,p[style*="text-align:right"] strong,p[style*="text-align: right"] strong,p.author strong,[rel="author"],.author-name,.byline,meta[name="author"]');if(authorEl){author=authorEl.innerText||authorEl.content||"";}author=author.replace(/^Theo\\s+/i,'').replace(/^Ảnh:.*\$/i,'').trim();if(!author||author.length>30){author="Tổng hợp";}var src=window.location.hostname.replace('www.','');var data=JSON.stringify({title:t.trim(),desc:desc.trim(),image:img.trim(),badge:badge.trim(),author:author.trim(),source:src});var tempInput=document.createElement("textarea");tempInput.value=data;tempInput.style.position="fixed";tempInput.style.left="-9999px";tempInput.style.top="0";document.body.appendChild(tempInput);tempInput.focus();tempInput.select();var copied=false;try{copied=document.execCommand("copy");}catch(e){}document.body.removeChild(tempInput);if(copied){alert("✅ Đã cào và copy thành công!");}else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(data).then(function(){alert("✅ Đã cào và copy thành công!");}).catch(function(){prompt("Copy dữ liệu JSON bên dưới:",data);});}else{prompt("Copy dữ liệu JSON bên dưới:",data);}}catch(err){alert("❌ Lỗi cào dữ liệu: "+err.message);}})();`;
 
   function copyBookmarkletCode() {
     navigator.clipboard.writeText(bookmarkletCode).then(() => {
@@ -1830,7 +2173,13 @@
 
     let logoImg = null;
     if (!logoUrl) {
-      logoImg = (currentBrand === 'reNews') ? preloadedReNewsLogo : preloadedReTechsLogo;
+      if (currentBrand === 'reNews') {
+        logoImg = preloadedReNewsLogo;
+      } else if (currentBrand === 'reTechs') {
+        logoImg = preloadedReTechsLogo;
+      } else {
+        logoImg = null; // Falls back to gorgeous custom text logo for reGame!
+      }
     } else {
       logoImg = await loadImageAsync(logoUrl);
     }
@@ -2016,6 +2365,35 @@
     return currentY - lineHeight;
   }
 
+  
+  // Helper to draw a star vector on canvas
+  function drawStar(ctx, cx, cy, spikes, outerRadius, innerRadius, color) {
+    let rot = Math.PI / 2 * 3;
+    let x = cx;
+    let y = cy;
+    let step = Math.PI / spikes;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - outerRadius);
+    for (let i = 0; i < spikes; i++) {
+      x = cx + Math.cos(rot) * outerRadius;
+      y = cy + Math.sin(rot) * outerRadius;
+      ctx.lineTo(x, y);
+      rot += step;
+
+      x = cx + Math.cos(rot) * innerRadius;
+      y = cy + Math.sin(rot) * innerRadius;
+      ctx.lineTo(x, y);
+      rot += step;
+    }
+    ctx.lineTo(cx, cy - outerRadius);
+    ctx.closePath();
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.restore();
+  }
+
   function renderDualLayer(img, img2, logo, title, desc, badge, author, source, dateStr, font, watermark, layout = 'default') {
     const canvas = document.getElementById('preview-canvas-news');
     const ctx = canvas.getContext('2d');
@@ -2036,13 +2414,14 @@
 
     let isQuote = (layout === 'quote');
     let isEmergency = (layout === 'emergency');
+    let isHoliday = (layout === 'holiday');
 
-    ctx.fillStyle = isEmergency ? '#0f0505' : '#080b11';
+    ctx.fillStyle = isEmergency ? '#0f0505' : (isHoliday ? '#450a0a' : '#080b11');
     ctx.fillRect(0, 0, w, h);
 
     let cardMargin = 65;
     let cardW = w - (cardMargin * 2);
-    let cardY = 300;
+    let cardY = 220; // Reduced top gap for 9:16 layout
     let maxCardH = 600;
     
     let textX = 65;
@@ -2059,7 +2438,7 @@
     let ctaYMax = 1640;
     
     let logoX = 65;
-    let logoY = isEmergency ? 180 : 160;
+    let logoY = isEmergency ? 120 : 100; // Raised logo to reduce top gap
 
     if (format === '1_1') {
       cardMargin = 60;
@@ -2138,12 +2517,12 @@
       grad.addColorStop(0.25, 'rgba(8, 11, 17, 0.45)');
       grad.addColorStop(0.6, 'rgba(8, 11, 17, 0.92)');
       grad.addColorStop(0.85, 'rgba(8, 11, 17, 0.99)');
-      grad.addColorStop(1, isEmergency ? '#0f0505' : '#080b11');
+      grad.addColorStop(1, isEmergency ? '#0f0505' : (isHoliday ? '#450a0a' : '#080b11'));
       ctx.fillStyle = grad;
       ctx.fillRect(0, startGradY, w, h - startGradY);
     }
 
-    // B. VẼ KHUNG VIỀN ĐẶC BIỆT CỦA BỐ CỤC KHẨN CẤP
+    // B. VẼ KHUNG VIỀN ĐẶC BIỆT CỦA BỐ CỤC KHẨN CẤP / NGÀY LỄ
     if (isEmergency) {
       ctx.save();
       ctx.lineWidth = 24;
@@ -2164,6 +2543,44 @@
       ctx.textAlign = 'center';
       ctx.fillText('🚨 CẢNH BÁO • EMERGENCY ALERT 🚨', w / 2, logoY - 52);
       ctx.textAlign = 'left';
+      ctx.restore();
+    } else if (isHoliday) {
+      ctx.save();
+      // Viền đơn bo cong nhẹ nhàng, thanh lịch, tránh chói và vuông
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = 'rgba(127, 29, 29, 0.65)'; // Đỏ sậm quý phái mờ nhẹ
+      ctx.beginPath();
+      ctx.roundRect(14, 14, w - 28, h - 28, 28); // Bo tròn góc cực kỳ mềm mại
+      ctx.stroke();
+
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)'; // Vàng gold mềm mại nhẹ nhàng
+      ctx.beginPath();
+      ctx.roundRect(22, 22, w - 44, h - 44, 20); // Bo tròn nhẹ nhàng lớp trong
+      ctx.stroke();
+
+      // Banner chúc mừng ở trên đầu
+      ctx.fillStyle = '#ef4444'; // Đỏ cờ tươi
+      ctx.beginPath();
+      ctx.roundRect(logoX, logoY - 100, textW, 70, 12);
+      ctx.fill();
+
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.5)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 30px ' + font;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('⭐ CHÚC MỪNG NGÀY LỄ ⭐', w / 2, logoY - 100 + 35); // Chỉ ghi tiếng Việt gọn gàng
+      ctx.textAlign = 'left';
+      
+      // Vẽ hai ngôi sao vàng lộng lẫy góc trên (chỉ vẽ trên 9:16 dọc)
+      if (format === '9_16') {
+        drawStar(ctx, logoX + 50, logoY - 150, 5, 25, 12, '#fcd34d');
+        drawStar(ctx, logoX + textW - 50, logoY - 150, 5, 25, 12, '#fcd34d');
+      }
       ctx.restore();
     }
 
@@ -2210,7 +2627,7 @@
 
         ctx.beginPath();
         ctx.roundRect(cardX, cardY, cardW, cardH, 20);
-        ctx.fillStyle = isEmergency ? '#1e0505' : '#0f172a';
+        ctx.fillStyle = isEmergency ? '#1e0505' : (isHoliday ? '#3b0712' : '#0f172a');
         ctx.fill();
         ctx.restore();
 
@@ -2319,8 +2736,8 @@
         ctx.save();
         ctx.beginPath();
         ctx.roundRect(cardX, cardY, cardW, cardH, 20);
-        ctx.strokeStyle = isEmergency ? '#ef4444' : 'rgba(255, 255, 255, 0.16)';
-        ctx.lineWidth = isEmergency ? 4 : 2;
+        ctx.strokeStyle = isEmergency ? '#ef4444' : (isHoliday ? 'rgba(245, 158, 11, 0.5)' : 'rgba(255, 255, 255, 0.16)');
+        ctx.lineWidth = isEmergency ? 4 : (isHoliday ? 2.5 : 2);
         ctx.stroke();
         ctx.restore();
 
@@ -2420,6 +2837,33 @@
 
         nextBadgeX = logoX + boxW + 20;
       }
+    } else {
+      // Vẽ logo bằng text cực đẹp cho các thương hiệu không có ảnh SVG preloaded hoặc khi logo trống
+      const logoText = (currentBrand === 'reGame') ? "reClash 🎮" : ((currentBrand === 'reNews') ? "reNews" : "reTechs");
+      const logoBgColor = (currentBrand === 'reGame') ? "#10b981" : ((currentBrand === 'reNews') ? "#f43f5e" : "#0284c7");
+      
+      ctx.save();
+      ctx.font = 'bold 28px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+      const logoMetrics = ctx.measureText(logoText);
+      const logoW = logoMetrics.width + 36;
+      const logoH = 68; // Khớp chiều cao với badgeBoxH
+      
+      ctx.beginPath();
+      ctx.roundRect(logoX, logoY, logoW, logoH, 12);
+      ctx.fillStyle = logoBgColor;
+      ctx.fill();
+      
+      ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      ctx.fillStyle = '#ffffff';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(logoText, logoX + 18, logoY + 34);
+      ctx.restore();
+
+      nextBadgeX = logoX + logoW + 20;
     }
 
     ctx.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
@@ -2430,13 +2874,13 @@
 
     ctx.beginPath();
     ctx.roundRect(nextBadgeX, logoY, badgeBoxW, badgeBoxH, 12);
-    ctx.fillStyle = isEmergency ? 'rgba(239, 68, 68, 0.15)' : 'rgba(255, 255, 255, 0.1)';
+    ctx.fillStyle = isEmergency ? 'rgba(239, 68, 68, 0.15)' : (isHoliday ? 'rgba(245, 158, 11, 0.15)' : 'rgba(255, 255, 255, 0.1)');
     ctx.fill();
-    ctx.strokeStyle = isEmergency ? 'rgba(239, 68, 68, 0.35)' : 'rgba(255, 255, 255, 0.2)';
+    ctx.strokeStyle = isEmergency ? 'rgba(239, 68, 68, 0.35)' : (isHoliday ? 'rgba(245, 158, 11, 0.35)' : 'rgba(255, 255, 255, 0.2)');
     ctx.lineWidth = 1;
     ctx.stroke();
 
-    ctx.fillStyle = isEmergency ? '#ef4444' : '#e2e8f0';
+    ctx.fillStyle = isEmergency ? '#ef4444' : (isHoliday ? '#f59e0b' : '#e2e8f0');
     ctx.fillText(badgeStr, nextBadgeX + 18, logoY + 42);
 
     const highlightSelect = document.getElementById('highlightStyle');
@@ -2498,7 +2942,7 @@
       ctx.restore();
     } else {
       ctx.save();
-      ctx.fillStyle = isEmergency ? '#fef08a' : '#ffffff';
+      ctx.fillStyle = isEmergency ? '#fef08a' : (isHoliday ? '#fcd34d' : '#ffffff');
       ctx.font = 'bold ' + titleFontSize + ' ' + font; 
       ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
       ctx.shadowBlur = 10;
@@ -2508,7 +2952,7 @@
       descEndY = nextY;
       if (desc) {
         ctx.save();
-        ctx.fillStyle = '#cbd5e1';
+        ctx.fillStyle = isHoliday ? '#ffedd5' : '#cbd5e1';
         ctx.font = '400 ' + descFontSize + ' ' + font.replace('bold ', '');
         ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
         ctx.shadowBlur = 6;
@@ -2711,88 +3155,63 @@
     }
   ];
 
-  const PRESETS = [
+    const PRESETS = [
     {
-      title: "GỬI EMAIL OTP & TRANSACTIONAL: [0 ĐỒNG]",
-      subTitle: "Không lo bị chặn spam hay tính phí: 5 nền tảng gửi Email OTP xác thực và tạo hòm thư tên miền riêng hoàn toàn miễn phí.",
-      listTitle: "Hạn Mức Dịch Vụ Gửi Email Transactional & OTP",
-      source: "Nguồn kiểm chứng: Resend, Brevo, Mailersend, Cloudflare, SendGrid Docs (2026)",
-      hashtag: "#RENEWS",
+      title: "ĐẠI CHIẾN SIÊU PHẨM: [IPHONE 16 PRO MAX VS GALAXY S25 ULTRA]",
+      subTitle: "So sánh toàn diện hai flagship đỉnh cao nhất thế giới di động hiện nay về hiệu năng, camera, màn hình và thời lượng pin.",
+      listTitle: "Bảng So Sánh Thông Số Cấu Hình Chi Tiết",
+      source: "Nguồn đối chiếu: Apple & Samsung Official Specs (2026)",
+      hashtag: "#RETECHS",
       topCards: [
-        { brand: "BREVO", value: "9.000", sub: "Email/tháng • 300/ngày Free", color: "#10b981" },
-        { brand: "RESEND", value: "3.000", sub: "Email/tháng • react template", color: "#6366f1" },
-        { brand: "CLOUDFLARE", value: "VÔ HẠN", sub: "Forward email tên miền 0đ", color: "#f97316" },
-        { brand: "TỶ LỆ INBOX", value: "99%", sub: "Độ tin cậy cao • tránh spam", color: "#ec4899" }
+        { brand: "CHIP A18 PRO", value: "3nm", sub: "Mạnh mẽ hàng đầu", color: "#f43f5e" },
+        { brand: "SNAPDRAGON 8", value: "4.47G", sub: "Xung nhịp cực khủng", color: "#38bdf8" },
+        { brand: "CAMERA", value: "200M", sub: "Siêu độ phân giải", color: "#eab308" },
+        { brand: "ĐỘ SÁNG", value: "2600N", sub: "Màn hình ngoài trời cực rõ", color: "#10b981" }
       ],
       items: [
-        { name: "Brevo", badge: "TOP 1 FREE", badgeBg: "#10b981", badgeText: "#ffffff", desc: "300 emails/ngày, Không giới hạn danh bạ liên hệ", barText: "9.000 Emails/Tháng (300/Ngày) Hoàn Toàn 0đ", barBg: "rgba(16, 185, 129, 0.15)", barTextCol: "#10b981", barVal: 0.9, stat: "9.000", statSub: "Emails/Tháng" },
-        { name: "Resend", badge: "REACT EMAIL", badgeBg: "#6366f1", badgeText: "#ffffff", desc: "Thiết kế template bằng React cực đẹp, gửi nhanh mượt", barText: "3.000 Emails/Tháng (100/Ngày) • DX Mượt Nhất", barBg: "rgba(99, 102, 241, 0.15)", barTextCol: "#6366f1", barVal: 0.5, stat: "3.000", statSub: "Emails/Tháng" },
-        { name: "Mailersend", badge: "SMTP & API", badgeBg: "#06b6d4", badgeText: "#ffffff", desc: "Dễ cấu hình và tích hợp vào WordPress / Node.js", barText: "3.000 Emails/Tháng • Email Verification tích hợp", barBg: "rgba(6, 182, 212, 0.15)", barTextCol: "#06b6d4", barVal: 0.5, stat: "3.000", statSub: "Emails/Tháng" },
-        { name: "Cloudflare", badge: "EMAIL ROUTING", badgeBg: "#f97316", badgeText: "#ffffff", desc: "Chuyển tiếp tất cả email nhận từ tên miền riêng", barText: "Chuyển Tiếp Vô Hạn Về Gmail Hoàn Toàn 0đ", barBg: "rgba(249, 115, 22, 0.15)", barTextCol: "#f97316", barVal: 1.0, stat: "Vô Hạn", statSub: "Forward Tên Miền" },
-        { name: "SendGrid", badge: "TWILIO CLOUD", badgeBg: "#0ea5e9", badgeText: "#ffffff", desc: "Nền tảng gửi mail lâu đời, hệ thống quản lý log mượt", barText: "3.000 Emails/Tháng (100/Ngày) • Chi Tiết Log", barBg: "rgba(14, 165, 233, 0.15)", barTextCol: "#0ea5e9", barVal: 0.5, stat: "3.000", statSub: "Emails/Tháng" }
+        { name: "Hiệu năng CPU/GPU", badge: "VI XỬ LÝ", badgeBg: "#f43f5e", badgeText: "#ffffff", desc: "A18 Pro (iPhone) tối ưu đơn nhân cực tốt, Snapdragon 8 Gen 4 (Samsung) có điểm đa nhân vượt trội.", barText: "A18 Pro vs Snapdragon 8 Gen 4 (Gần như ngang ngửa)", barBg: "rgba(244, 63, 94, 0.15)", barTextCol: "#f43f5e", barVal: 0.95, stat: "9.8/10", statSub: "Hiệu Năng" },
+        { name: "Camera & Nhiếp Ảnh", badge: "ỐNG KÍNH", badgeBg: "#38bdf8", badgeText: "#ffffff", desc: "Galaxy S25 Ultra vượt trội với cảm biến chính 200MP và zoom quang 10x, iPhone 16 Pro Max dẫn đầu về quay video Cinematic.", barText: "Samsung 200MP vs iPhone 48MP • Zoom 10x vs 5x", barBg: "rgba(56, 189, 248, 0.15)", barTextCol: "#38bdf8", barVal: 0.9, stat: "200M", statSub: "Độ phân giải" },
+        { name: "Màn hình hiển thị", badge: "MỸ THUẬT", badgeBg: "#eab308", badgeText: "#ffffff", desc: "Cả hai đều có màn hình OLED 120Hz, Samsung đạt độ sáng 2600 nits chống chói vượt trội, iPhone có viền mỏng nhất lịch sử.", barText: "OLED 120Hz • Độ sáng cực cao 2600 nits", barBg: "rgba(234, 179, 8, 0.15)", barTextCol: "#eab308", barVal: 1.0, stat: "120Hz", statSub: "Tần số quét" },
+        { name: "Pin & Tốc độ sạc", badge: "NĂNG LƯỢNG", badgeBg: "#10b981", badgeText: "#ffffff", desc: "Samsung hỗ trợ sạc nhanh 45W, iPhone 16 Pro Max tối ưu thời lượng pin xem video lên đến 29 giờ liên tục.", barText: "Samsung 45W vs iPhone 25W • Thời lượng dùng vượt trội", barBg: "rgba(16, 185, 129, 0.15)", barTextCol: "#10b981", barVal: 0.85, stat: "45W", statSub: "Sạc siêu tốc" }
       ]
     },
     {
-      title: "VPS & CLOUD HOSTING [MIỄN PHÍ] CHO DEV",
-      subTitle: "Xây dựng và deploy dự án của bạn lên mây chỉ trong vài giây hoàn toàn miễn phí. Top 5 nền tảng cloud hosting được dev tin dùng nhất.",
-      listTitle: "Danh Sách Hạn Mức Cloud Hosting Free-Tier (2026)",
-      source: "Nguồn tham khảo: Vercel, Netlify, Render, Railway, Fly.io pricing logs",
-      hashtag: "#RENEWS",
+      title: "CẤU HÌNH PC CHƠI MƯỢT [GTA VI] GIÁ TỐT NHẤT",
+      subTitle: "Tư vấn cấu hình máy tính bàn tối ưu chi phí để chiến mượt mà siêu phẩm bom tấn Grand Theft Auto VI tại độ phân giải Full HD / 2K.",
+      listTitle: "Chi Tiết Linh Kiện & Thông Số Đề Xuất",
+      source: "Nguồn tham khảo: Rockstar Games Recommended Specs & Tech Benchmarks",
+      hashtag: "#RETECHS",
       topCards: [
-        { brand: "VERCEL", value: "FREE", sub: "Tối ưu nhất cho Next.js", color: "#10b981" },
-        { brand: "NETLIFY", value: "100GB", sub: "Băng thông cực cao hàng tháng", color: "#06b6d4" },
-        { brand: "RENDER", value: "STATIC", sub: "Hỗ trợ deploy web tĩnh & Node", color: "#6366f1" },
-        { brand: "RAILWAY", value: "$5/M", sub: "Tặng credit thử nghiệm miễn phí", color: "#f97316" }
+        { brand: "CHIP CPU", value: "Core i5", sub: "12400F hoặc Ryzen 5 5600", color: "#38bdf8" },
+        { brand: "CARD RTX", value: "4060 Ti", sub: "Chiến mượt Ray Tracing", color: "#10b981" },
+        { brand: "BỘ NHỚ RAM", value: "32 GB", sub: "Không lo nghẹt bộ nhớ", color: "#6366f1" },
+        { brand: "DUNG LƯỢNG", value: "1TB SSD", sub: "Tốc độ NVMe siêu tốc", color: "#f97316" }
       ],
       items: [
-        { name: "Vercel", badge: "TOP 1 STATIC", badgeBg: "#10b981", badgeText: "#ffffff", desc: "Phục vụ triển khai Next.js, React cực kỳ nhanh chóng và tối ưu", barText: "Băng thông 100GB/Tháng, Không giới hạn Serverless", barBg: "rgba(16, 185, 129, 0.15)", barTextCol: "#10b981", barVal: 1.0, stat: "100GB", statSub: "Bandwidth/Tháng" },
-        { name: "Netlify", badge: "DX MƯỢT", badgeBg: "#06b6d4", badgeText: "#ffffff", desc: "Deploy nhanh qua Git, quản lý form và serverless function tốt", barText: "100GB/Tháng • Deploy Web Tĩnh Không Giới Hạn", barBg: "rgba(6, 182, 212, 0.15)", barTextCol: "#06b6d4", barVal: 1.0, stat: "100GB", statSub: "Bandwidth/Tháng" },
-        { name: "Render", badge: "ĐA NĂNG", badgeBg: "#6366f1", badgeText: "#ffffff", desc: "Hỗ trợ Web tĩnh, Web Services (Node, Python), tự động ngủ", barText: "Miễn Phí Static Web + Web Service 750 giờ/Tháng", barBg: "rgba(99, 102, 241, 0.15)", barTextCol: "#6366f1", barVal: 0.8, stat: "750 H", statSub: "Active/Tháng" },
-        { name: "Fly.io", badge: "DOCKER", badgeBg: "#ec4899", badgeText: "#ffffff", desc: "Deploy bằng file cấu hình Docker, máy chủ phân phối toàn cầu", barText: "Tặng 3 máy ảo micro + Băng thông 160GB", barBg: "rgba(236, 72, 153, 0.15)", barTextCol: "#ec4899", barVal: 0.9, stat: "3 VM", statSub: "Micro Server" },
-        { name: "Railway", badge: "CREDIT FREE", badgeBg: "#f97316", badgeText: "#ffffff", desc: "Deploy mọi thứ từ database đến docker, giao diện kéo thả mượt", barText: "Tặng $5 credit dùng thử hàng tháng (500 giờ chạy)", barBg: "rgba(249, 115, 22, 0.15)", barTextCol: "#f97316", barVal: 0.6, stat: "500 H", statSub: "Dùng Thử Free" }
+        { name: "CPU (Vi xử lý)", badge: "LÕI CỨNG", badgeBg: "#38bdf8", badgeText: "#ffffff", desc: "Intel Core i5-12400F hoặc AMD Ryzen 5 5600 là lựa chọn hoàn hảo nhất trong tầm giá.", barText: "6 nhân 12 luồng • Tần số turbo 4.4GHz", barBg: "rgba(56, 189, 248, 0.15)", barTextCol: "#38bdf8", barVal: 0.85, stat: "6 Cores", statSub: "Xử lý đa nhiệm" },
+        { name: "GPU (Card đồ họa)", badge: "ĐỒ HỌA", badgeBg: "#10b981", badgeText: "#ffffff", desc: "NVIDIA RTX 4060 Ti 16GB giúp bật DLSS 3 và Frame Generation mượt mà trên Vice City thế hệ mới.", barText: "RTX 4060 Ti • Hỗ trợ Ray Tracing cực nét", barBg: "rgba(16, 185, 129, 0.15)", barTextCol: "#10b981", barVal: 0.95, stat: "16GB", statSub: "VRAM Đồ họa" },
+        { name: "Bộ nhớ RAM & SSD", badge: "LƯU TRỮ", badgeBg: "#6366f1", badgeText: "#ffffff", desc: "GTA VI yêu cầu lượng nạp tài nguyên cực lớn. 32GB RAM và SSD NVMe là bắt buộc để tránh giật lag.", barText: "32GB RAM DDR5 + 1TB SSD NVMe Gen4", barBg: "rgba(99, 102, 241, 0.15)", barTextCol: "#6366f1", barVal: 0.9, stat: "32GB", statSub: "DDR5 RAM" }
       ]
     },
     {
-      title: "TOP DATABASE CLOUD [MIỄN PHÍ] XỊN NHẤT",
-      subTitle: "Cần database chất lượng cao cho đồ án hoặc app cá nhân? Top 5 cơ sở dữ liệu lưu trữ đám mây free-tier vô cùng rộng rãi cho anh em dev.",
-      listTitle: "Dung Lượng Cơ Sở Dữ Liệu Cloud Free-Tier Tốt Nhất",
-      source: "Nguồn đối chiếu: Supabase, Neon, MongoDB, PlanetScale, Cockroach Labs",
-      hashtag: "#DEVCHIEU",
+      title: "ĐÁNH GIÁ SIÊU PHẨM ARPG: [BLACK MYTH: WUKONG]",
+      subTitle: "Bảng chấm điểm chi tiết về đồ họa, lối chơi, âm nhạc và độ khó của tựa game hành động nhập vai đỉnh cao nhất năm.",
+      listTitle: "Chỉ Số Đánh Giá Toàn Diện Từ Giới Chuyên Môn",
+      source: "Nguồn tổng hợp: IGN, Metacritic, GameSpot & Steam Reviews",
+      hashtag: "#GAMING",
       topCards: [
-        { brand: "SUPABASE", value: "500MB", sub: "PostgreSQL đầy đủ tính năng", color: "#10b981" },
-        { brand: "NEON", value: "3GB", sub: "Serverless Postgres mượt mà", color: "#06b6d4" },
-        { brand: "MONGODB", value: "512MB", sub: "Lựa chọn NoSQL số 1 hiện nay", color: "#6366f1" },
-        { brand: "COCKROACH", value: "10GB", sub: "Dung lượng SQL lớn nhất", color: "#ec4899" }
+        { brand: "ĐỒ HỌA", value: "10/10", sub: "Unreal Engine 5 đỉnh cao", color: "#ec4899" },
+        { brand: "GAMEPLAY", value: "9.5/10", sub: "Chiến đấu đã tay, biến hóa", color: "#f97316" },
+        { brand: "ĐỘ KHÓ", value: "8.5/10", sub: "Thách thức nhưng cuốn hút", color: "#f43f5e" },
+        { brand: "STEAM RATE", value: "96%", sub: "Đánh giá tích cực cực cao", color: "#10b981" }
       ],
       items: [
-        { name: "Neon Tech", badge: "DUNG LƯỢNG LỚN", badgeBg: "#06b6d4", badgeText: "#ffffff", desc: "Serverless Postgres thế hệ mới, hỗ trợ autoscaling thông minh", barText: "3GB Lưu Trữ Postgres hoàn toàn miễn phí • Không tự động tắt", barBg: "rgba(6, 182, 212, 0.15)", barTextCol: "#06b6d4", barVal: 0.9, stat: "3.0 GB", statSub: "Postgres Storage" },
-        { name: "Supabase", badge: "POSTGRES BAAS", badgeBg: "#10b981", badgeText: "#ffffff", desc: "Giải pháp thay thế Firebase, tặng Auth, Storage, Edge Functions", barText: "500MB Database PostgreSQL + 1GB Storage • Không giới hạn API", barBg: "rgba(16, 185, 129, 0.15)", barTextCol: "#10b981", barVal: 0.5, stat: "500 MB", statSub: "Database + Auth" },
-        { name: "MongoDB Atlas", badge: "TOP 1 NOSQL", badgeBg: "#10b981", badgeText: "#ffffff", desc: "Cơ sở dữ liệu dạng tài liệu JSON, phù hợp cho NodeJS/MERN stack", barText: "512MB Dung Lượng Free • Tốc độ truy vấn cao toàn cầu", barBg: "rgba(16, 185, 129, 0.15)", barTextCol: "#10b981", barVal: 0.5, stat: "512 MB", statSub: "NoSQL Database" },
-        { name: "CockroachDB", badge: "CLUSTER SQL", badgeBg: "#6366f1", badgeText: "#ffffff", desc: "Postgres-compatible phân tán toàn cầu, độ sẵn sàng siêu cao", barText: "10GB Lưu trữ SQL miễn phí • Tặng 50M Request/Tháng", barBg: "rgba(99, 102, 241, 0.15)", barTextCol: "#6366f1", barVal: 1.0, stat: "10.0 GB", statSub: "SQL Storage" },
-        { name: "Firebase", badge: "REALTIME", badgeBg: "#f97316", badgeText: "#ffffff", desc: "Cơ sở dữ liệu Realtime, Firestore mượt cho mobile app và web", barText: "1GB Firestore Storage • 50k đọc / 20k viết miễn phí mỗi ngày", barBg: "rgba(249, 115, 22, 0.15)", barTextCol: "#f97316", barVal: 0.6, stat: "1.0 GB", statSub: "Firestore Limit" }
-      ]
-    },
-    {
-      title: "AI API [MIỄN PHÍ] CHO LẬP TRÌNH VIÊN",
-      subTitle: "Tự tạo chatbot hay công cụ AI của riêng bạn mà không tốn một cắc. Tổng hợp các đầu API AI free-tier và giá cực hời cho dev học tập.",
-      listTitle: "Đầu API AI Phổ Biến Tốt Nhất Cho Lập Trình Viên",
-      source: "Nguồn dữ liệu: Google AI Studio, Groq, Cohere, OpenRouter docs (2026)",
-      hashtag: "#DEVCHIEU",
-      topCards: [
-        { brand: "GEMINI 1.5", value: "FREE", sub: "Tặng 15 RPM • 1M token context", color: "#10b981" },
-        { brand: "GROQ CLOUD", value: "SIÊU TỐC", sub: "Hỗ trợ Llama 3 • Tốc độ siêu việt", color: "#06b6d4" },
-        { brand: "COHERE", value: "FREE-TIER", sub: "Phân tích NLP & Embedding mượt", color: "#6366f1" },
-        { brand: "OPENROUTER", value: "DỰ PHÒNG", sub: "Tổng hợp hàng trăm model free", color: "#ec4899" }
-      ],
-      items: [
-        { name: "Google Gemini", badge: "MẠNH NHẤT FREE", badgeBg: "#10b981", badgeText: "#ffffff", desc: "Sở hữu context 1 triệu token, tốc độ xử lý đỉnh cao qua API Studio", barText: "Miễn Phí 15 Request/Phút • Thích hợp mọi ứng dụng AI", barBg: "rgba(16, 185, 129, 0.15)", barTextCol: "#10b981", barVal: 1.0, stat: "FREE", statSub: "1.5 Flash / Pro" },
-        { name: "Groq Cloud", badge: "TỐC ĐỘ TỔI THƯỢNG", badgeBg: "#06b6d4", badgeText: "#ffffff", desc: "Chạy model Llama 3 và Gemma trên chip LPU siêu tốc (800 token/s)", barText: "Miễn Phí Hạn Mức Tốc Độ Cao Cho Nhà Phát Triển", barBg: "rgba(6, 182, 212, 0.15)", barTextCol: "#06b6d4", barVal: 0.9, stat: "FREE", statSub: "Llama 3 / Gemma" },
-        { name: "Cohere AI", badge: "NLP CHUYÊN SÂU", badgeBg: "#6366f1", badgeText: "#ffffff", desc: "Cung cấp các model chuyên sâu cho phân tích, tìm kiếm ngữ nghĩa", barText: "Tặng free-tier cho môi trường phát triển & học tập", barBg: "rgba(99, 102, 241, 0.15)", barTextCol: "#6366f1", barVal: 0.6, stat: "FREE", statSub: "Embed & Classify" },
-        { name: "OpenRouter", badge: "API TRUNG GIAN", badgeBg: "#f97316", badgeText: "#ffffff", desc: "Cổng API trung gian kết nối mọi mô hình, cung cấp many model free", barText: "Hỗ trợ Llama 3, Mistral 7B hoàn toàn miễn phí, mượt mà", barBg: "rgba(249, 115, 22, 0.15)", barTextCol: "#f97316", barVal: 0.8, stat: "FREE", statSub: "Open Models" },
-        { name: "Hugging Face", badge: "OPEN SOURCE", badgeBg: "#0ea5e9", badgeText: "#ffffff", desc: "Triển khai serverless API cho hàng ngàn mô hình AI nguồn mở", barText: "Miễn phí qua HF Serverless Inference API • Rate Limit nhẹ", barBg: "rgba(14, 165, 233, 0.15)", barTextCol: "#0ea5e9", barVal: 0.7, stat: "FREE", statSub: "Inference API" }
+        { name: "Đồ họa & Công nghệ", badge: "MỸ THUẬT", badgeBg: "#ec4899", badgeText: "#ffffff", desc: "Sử dụng Unreal Engine 5 kết hợp Full Ray Tracing mang lại thế giới thần thoại Tây Du đẹp ngỡ ngàng.", barText: "Unreal Engine 5 • Nanite & Lumen cực kỳ sống động", barBg: "rgba(236, 72, 153, 0.15)", barTextCol: "#ec4899", barVal: 1.0, stat: "10/10", statSub: "Điểm đồ họa" },
+        { name: "Hệ thống chiến đấu", badge: "LỐI CHƠI", badgeBg: "#f97316", badgeText: "#ffffff", desc: "72 phép biến hóa, gậy Như Ý linh hoạt, boss chiến đa dạng thử thách phản xạ người chơi.", barText: "Phép thuật phong phú • Hành động nhịp độ cao", barBg: "rgba(249, 115, 22, 0.15)", barTextCol: "#f97316", barVal: 0.95, stat: "9.5", statSub: "Điểm Gameplay" },
+        { name: "Cốt truyện & Âm nhạc", badge: "CẢM XÚC", badgeBg: "#38bdf8", badgeText: "#ffffff", desc: "Hậu truyện Tây Du Ký sâu sắc, kết hợp nhạc nền giao hưởng truyền thống hùng tráng, xúc động.", barText: "Tái hiện Tây Du Ký hào hùng • Nhạc nền đỉnh cao", barBg: "rgba(56, 189, 248, 0.15)", barTextCol: "#38bdf8", barVal: 0.9, stat: "9.0", statSub: "Điểm cốt truyện" }
       ]
     }
-  ];
+  ];;
 
   function loadPreset(idx) {
     const preset = PRESETS[idx];
@@ -2815,7 +3234,7 @@
     
     renderTopCardsForm();
     renderComparisonListForm();
-    isInfoGenerated = true; // Kích hoạt vẽ Infographic thật ngay khi sếp chọn mẫu nhanh!
+    isInfoGenerated = true; // Kích hoạt vẽ Infographic thật ngay khi chọn mẫu nhanh!
     triggerRender();
   }
 
@@ -2938,7 +3357,7 @@
 
   function addComparisonItem() {
     if (comparisonItems.length >= 6) {
-      alert("Hệ thống khuyên sếp nên để tối đa 5-6 dòng để bố cục ảnh cân đối và không bị chật!");
+      alert("Hệ thống khuyên bạn nên để tối đa 5-6 dòng để bố cục ảnh cân đối và không bị chật!");
     }
     comparisonItems.push({
       name: "Dịch vụ mới",
@@ -2959,7 +3378,7 @@
 
   function removeComparisonItem(idx) {
     if (comparisonItems.length <= 1) {
-      alert("Sếp cần có ít nhất 1 dòng so sánh để render!");
+      alert("Bạn cần có ít nhất 1 dòng so sánh để render!");
       return;
     }
     comparisonItems.splice(idx, 1);
@@ -3021,7 +3440,22 @@
     const canvas = document.getElementById('preview-canvas-info');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const w = canvas.width, h = canvas.height; // 1200 x 1600 px (Perfect 3:4 Infographic Layout)
+    
+    // Đọc định dạng tỷ lệ từ dropdown reTechs
+    const formatInfo = document.getElementById('formatSelectInfo')?.value || '3_4';
+    let w = 1200;
+    let h = 1600;
+    if (formatInfo === '9_16') {
+      h = 2133; // Tỷ lệ 9:16 siêu nét cho video slide dọc
+    } else if (formatInfo === '1_1') {
+      h = 1200; // Tỷ lệ vuông gọn gàng
+    }
+    
+    canvas.width = w;
+    canvas.height = h;
+
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
 
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
@@ -3058,7 +3492,7 @@
     ctx.restore();
 
     // 3. LOGO BRAND (ĐỘC QUYỀN THEO THƯƠNG HIỆU ĐƯỢC CHỌN)
-    const activeLogo = (currentBrand === 'reNews') ? preloadedReNewsLogo : preloadedReTechsLogo;
+    const activeLogo = (currentBrand === 'reNews') ? preloadedReNewsLogo : ((currentBrand === 'reTechs') ? preloadedReTechsLogo : null);
     if (activeLogo && activeLogo.complete) {
       ctx.save();
       ctx.shadowColor = 'rgba(0,0,0,0.4)';
@@ -3068,7 +3502,8 @@
       ctx.restore();
     } else {
       // Fallback logo badge
-      const logoText = document.getElementById('logoText').value.trim();
+      const logoText = (currentBrand === 'reGame') ? "reClash 🎮" : document.getElementById('logoText').value.trim();
+      const logoBgColor = (currentBrand === 'reGame') ? "#10b981" : document.getElementById('logoBgColor').value;
       if (logoText) {
         ctx.save();
         ctx.font = 'bold 20px -apple-system, BlinkMacSystemFont, sans-serif';
@@ -3079,7 +3514,7 @@
 
         ctx.beginPath();
         ctx.roundRect(logoX, logoY, logoW, logoH, 12);
-        ctx.fillStyle = document.getElementById('logoBgColor').value;
+        ctx.fillStyle = logoBgColor;
         ctx.fill();
 
         ctx.fillStyle = '#ffffff';
@@ -3382,7 +3817,7 @@
     // 9. CHÂN TRANG (FOOTER)
     const sourceVal = document.getElementById('sourceTextInfo').value.trim();
     const hashtagVal = document.getElementById('hashtagText').value.trim();
-    const footerY = 1530;
+    const footerY = h - 70; // Tự động căn chỉnh chân trang cách đáy luôn luôn là 70px
 
     ctx.beginPath();
     ctx.moveTo(50, footerY);
@@ -3466,6 +3901,99 @@
     ctx.fillText(text, x + padX, y + padY);
     ctx.restore();
   }
+
+  // ==================== ACCORDION UI INITIALIZATION FOR RETECHS ====================
+  function initAccordion() {
+    document.querySelectorAll('#form-retechs .section-box').forEach(box => {
+      const title = box.querySelector('.section-title');
+      if (!title) return;
+      
+      // Kiểm tra nếu đã có section-content thì không bọc lại tránh trùng lặp
+      let contentDiv = box.querySelector('.section-content');
+      if (!contentDiv) {
+        contentDiv = document.createElement('div');
+        contentDiv.className = 'section-content';
+        
+        // Di chuyển tất cả con trừ title vào trong contentDiv
+        const children = Array.from(box.children);
+        children.forEach(child => {
+          if (child !== title) {
+            contentDiv.appendChild(child);
+          }
+        });
+        
+        box.appendChild(contentDiv);
+      }
+      
+      // Tạo icon gạt accordion
+      if (!title.querySelector('.accordion-caret')) {
+        const caret = document.createElement('span');
+        caret.className = 'accordion-caret';
+        caret.innerHTML = '<i class="fa-solid fa-chevron-down"></i>';
+        title.appendChild(caret);
+      }
+      
+      // Sự kiện gạt mở rộng/thu gọn
+      title.addEventListener('click', (e) => {
+        // Tránh sự kiện gạt khi bấm nút "+ Thêm dòng" hoặc nút presets
+        if (e.target.closest('button')) return;
+        box.classList.toggle('collapsed');
+      });
+      
+      // Thu gọn mặc định khi khởi tạo (trừ phần 1 và phần 2 cho dễ nhìn)
+      if (!box.classList.contains('preset-selector') && !title.textContent.includes('Tiêu Đề')) {
+        box.classList.add('collapsed');
+      }
+    });
+  }
+
+  // ==================== AUTO FILL & BOOKMARKLET FOR RETECHS SPECS ====================
+  const bookmarkletCodeInfo = `javascript:(function(){try{var t=document.querySelector('h1.detail-title,h1.title-detail,h1.name,h1.product_name,.product-name,h1')?.innerText||document.title||"";t=t.replace(/\\s*-\\s*Thế Giới Di Động.*/i,'').replace(/\\s*-\\s*CellphoneS.*/i,'').trim();var specData={};var rows=document.querySelectorAll('.parameter-list li,.parameter li,.technical-info tr,.table-spec tr,table tr,.box-spec li');rows.forEach(function(row){var labelEl=row.querySelector('span,th,td:first-child,.spec-label,.left');var valueEl=row.querySelector('div,td:last-child,.spec-value,.right');if(labelEl&&valueEl){var label=labelEl.innerText.trim();var value=valueEl.innerText.trim();if(label&&value){specData[label]=value;}}});var cpu=specData['Chip xử lý (CPU)']||specData['CPU']||specData['Bộ vi xử lý']||specData['Chip']||'Mạnh mẽ';var ram=specData['RAM']||specData['Bộ nhớ trong (RAM)']||'Tiêu chuẩn';var pin=specData['Dung lượng pin']||specData['Pin']||specData['Dung lượng Pin']||'Bền bỉ';var screen=specData['Màn hình']||specData['Công nghệ màn hình']||specData['Kích thước màn hình']||'Sắc nét';var rom=specData['Bộ nhớ trong']||specData['Bộ nhớ']||specData['ROM']||'Rộng rãi';var os=specData['Hệ điều hành']||specData['OS']||'Hiện đại';var data={title:"CẤU HÌNH CHI TIẾT: ["+t.toUpperCase()+"]",subTitle:"Đánh giá thông số kỹ thuật chính thức và các điểm nổi bật của dòng sản phẩm mới.",listTitle:"Bảng So Sánh Thông Số Kỹ Thuật Đột Phá",topCards:[{brand:"CHIP CPU",value:cpu.split(' ')[0]||"ĐỈNH",sub:cpu.substring(0,24),color:"#10b981"},{brand:"BỘ NHỚ RAM",value:ram.split(' ')[0]||"MƯỢT",sub:ram.substring(0,24),color:"#6366f1"},{brand:"PIN & SẠC",value:pin.split(' ')[0]||"KHỦNG",sub:pin.substring(0,24),color:"#f97316"},{brand:"MÀN HÌNH",value:screen.split(' ')[0]||"NÉT",sub:screen.substring(0,24),color:"#ec4899"}],items:[{name:"Hiệu Năng (Chipset)",badge:"CẤU HÌNH",badgeBg:"#10b981",badgeText:"#ffffff",desc:"Được trang bị "+cpu+", tối ưu tác vụ nặng và chiến game đồ họa.",barText:"CPU: "+cpu+" • Siêu mượt",barBg:"rgba(16, 185, 129, 0.15)",barTextCol:"#10b981",barVal:0.9,stat:ram.split(' ')[0]||"8GB",statSub:"Dung lượng RAM"},{name:"Màn Hình Hiển Thị",badge:"MỸ THUẬT",badgeBg:"#6366f1",badgeText:"#ffffff",desc:"Công nghệ "+screen+" cho hình ảnh sắc nét, màu sắc sống động.",barText:"Màn hình: "+screen,barBg:"rgba(99, 102, 241, 0.15)",barTextCol:"#6366f1",barVal:0.85,stat:screen.match(/\\d+(\\.\\d+)?/)?.[0]+"″"||"6.7\"",statSub:"Kích thước"},{name:"Dung Lượng Pin & OS",badge:"NĂNG LƯỢNG",badgeBg:"#f97316",badgeText:"#ffffff",desc:"Dung lượng pin "+pin+", chạy hệ điều hành "+os+".",barText:"Pin: "+pin+" • OS: "+os,barBg:"rgba(249, 115, 22, 0.15)",barTextCol:"#f97316",barVal:0.8,stat:pin.match(/\\d+/)?.[0]||"5000",statSub:"Dung lượng mAh"}]};var jsonStr=JSON.stringify(data);var tempInput=document.createElement("textarea");tempInput.value=jsonStr;tempInput.style.position="fixed";tempInput.style.left="-9999px";tempInput.style.top="0";document.body.appendChild(tempInput);tempInput.focus();tempInput.select();var copied=false;try{copied=document.execCommand("copy");}catch(e){}document.body.removeChild(tempInput);if(copied){alert("✅ Đã cào thông số "+t+" thành công!");}else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(jsonStr).then(function(){alert("✅ Đã cào thông số "+t+" thành công!");}).catch(function(){prompt("Copy dữ liệu JSON cấu hình bên dưới:",jsonStr);});}else{prompt("Copy dữ liệu JSON cấu hình bên dưới:",jsonStr);}}catch(err){alert("❌ Lỗi cào thông số: "+err.message);}})();`;
+
+  function copyBookmarkletCodeInfo() {
+    navigator.clipboard.writeText(bookmarkletCodeInfo).then(() => {
+      const btn = document.getElementById('btnCopyBmInfo');
+      if (btn) btn.innerText = "✅ Đã Sao Chép!";
+      setTimeout(() => {
+        if (btn) btn.innerText = "📋 Sao Chép Mã Bookmarklet reTechs";
+      }, 2000);
+    }).catch(() => {
+      prompt("Copy thủ công đoạn mã này:", bookmarkletCodeInfo);
+    });
+  }
+
+  function handleAutoFillInfo(val) {
+    if (!val) return;
+    try {
+      const data = JSON.parse(val);
+      if (data.title) document.getElementById('mainTitle').value = data.title;
+      if (data.subTitle) document.getElementById('subTitle').value = data.subTitle;
+      if (data.listTitle) document.getElementById('listTitle').value = data.listTitle;
+      if (data.source) document.getElementById('sourceTextInfo').value = data.source;
+      if (data.hashtag) document.getElementById('hashtagText').value = data.hashtag;
+      
+      if (data.topCards && Array.isArray(data.topCards)) {
+        topCards = JSON.parse(JSON.stringify(data.topCards));
+        renderTopCardsForm();
+      }
+      if (data.items && Array.isArray(data.items)) {
+        comparisonItems = JSON.parse(JSON.stringify(data.items));
+        renderComparisonListForm();
+      }
+      
+      document.getElementById('autoPasteInputInfo').value = "";
+      isInfoGenerated = true;
+      triggerRender();
+      alert("✅ Tự động điền thông số cào tin reTechs thành công!");
+    } catch (err) {
+      alert("❌ Lỗi định dạng JSON nhập vào. Hãy đảm bảo copy chính xác từ Bookmarklet.");
+    }
+  }
+
+  function changeFormatInfo() {
+    triggerRender();
+  }
+
 </script>
 </body>
 </html>
